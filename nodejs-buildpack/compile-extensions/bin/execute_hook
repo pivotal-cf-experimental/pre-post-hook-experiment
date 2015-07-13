@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+build_dir   = ARGV.shift
+hook_name = ARGV.shift
+
+hook_script = File.join(build_dir, "#{hook_name}-hook.sh")
+exit(system(hook_script)) if File.exists?(hook_script)
